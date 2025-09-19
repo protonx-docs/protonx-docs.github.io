@@ -22,7 +22,7 @@ from protonx import ProtonX
 client = ProtonX(api_key="your_api_key")
 
 # Create an embedding
-text = "ProtonX converts text into embeddings super fast."
+text = "Tôi yêu Việt Nam"
 result = client.embeddings.create(text)
 ```
 

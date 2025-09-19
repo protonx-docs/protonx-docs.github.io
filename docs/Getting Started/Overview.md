@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-slug: /
 id: overview
 title: Overview
+slug: /
 ---
 
 # ProtonX 
@@ -39,3 +39,9 @@ It is designed to handle large-scale data with **very high speed**, making it id
 
 ```bash
 pip install protonx
+```
+
+### Install from npm
+
+```bash
+npm install protonx

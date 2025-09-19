@@ -9,8 +9,7 @@ slug: /
 
 ## Introduction
 
-**ProtonX** is a Python library that converts text into **vector embeddings** quickly and accurately.  
-It is designed to handle large-scale data with **very high speed**, making it ideal for semantic search, classification, and content recommendation applications.
+**ProtonX** is a library that provides essential tools and models for building high-accuracy chatbots.
 
 ### Use Cases
 

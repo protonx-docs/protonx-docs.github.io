@@ -4,6 +4,9 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 import {themes as prismThemes} from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -47,7 +50,9 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/', // Đặt docs tại route '/'
+          routeBasePath: '/', // Đặt docs tại route '/',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         blog: false, // Tắt blog
         theme: {
@@ -55,6 +60,14 @@ const config = {
         },
       }),
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
 
   themeConfig:
@@ -71,29 +84,21 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docsSidebar', // ✅ Đổi từ 'tutorialSidebar' → 'docsSidebar'
             position: 'left',
             label: 'Docs',
           },
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            versions: ['0.1.3'], 
+            // ✅ Bỏ dòng versions array, để Docusaurus tự động lấy tất cả versions
+            dropdownActiveClassDisabled: true,
           }
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Getting Started',
-                to: '/',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [

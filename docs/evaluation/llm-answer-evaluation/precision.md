@@ -9,7 +9,7 @@ title: Độ chính xác - Precision
 
 Bao nhiêu trong số các phát biểu của chatbot là chính xác.
 
-## Giải tích độ chính xác
+## Giải thích độ chính xác
 
 ### Bước 1: Chia câu trả lời của mô hình ngôn ngữ thành các phát biểu chính
 

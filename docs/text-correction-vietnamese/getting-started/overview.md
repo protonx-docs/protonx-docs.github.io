@@ -6,11 +6,11 @@ title: Tổng quan
 
 ---
 
-**Mục tiêu:** Sửa lỗi sai chính tả cho tiếng việt, đặc biệt hỗ trợ tốt trên văn bản luật.
+**Mục tiêu:** Sửa lỗi sai chính tả cho Tiếng Việt, đặc biệt hỗ trợ tốt trên văn bản luật.
 
 ---
 
-## 1. Sửa lỗi dấu tiếng Việt
+## 1. Sửa lỗi dấu Tiếng Việt
 Hỗ trợ sửa các câu bị **thiếu dấu hoặc sai dấu**.
 
 **Ví dụ:**

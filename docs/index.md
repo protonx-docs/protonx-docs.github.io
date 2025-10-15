@@ -21,7 +21,7 @@ Chào mừng bạn đến với tài liệu hướng dẫn sử dụng thư vi�
 - [Tổng quan](./embedding/getting-started/overview)
 - [Quickstart](./embedding/getting-started/quickstart)
 
-### Sửa Chính tả tiếng việt
+### Sửa Chính tả Tiếng Việt
 - [Tổng quan](./text-correction-vietnamese/getting-started/overview)
 - [Quickstart](./text-correction-vietnamese/getting-started/installation)
 

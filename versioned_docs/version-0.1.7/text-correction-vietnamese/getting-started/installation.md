@@ -19,9 +19,9 @@ Nếu bạn đang dùng **Google Colab**, có thể chạy ngay trong ô lệnh 
 
 ---
 
-### 1.1. Sử dụng Online qua API
+## 2. Cấu hình API Key
 
-Để sử dụng được các chức năng sửa lỗi chính tả online, bạn cần có **ProtonX API Key**.
+Để sử dụng được các chức năng đánh giá, bạn cần có **ProtonX API Key**.
 
 * Truy cập trang: [https://platform.protonx.io/login](https://platform.protonx.io/login)
 * Đăng nhập và lấy khóa API cá nhân của bạn.
@@ -42,75 +42,31 @@ import os
 os.environ["PROTONX_API_KEY"] = "your_api_key_here"
 ```
 
-Sau khi đã cấu hình xong, khởi tạo client ProtonX bằng đoạn code mẫu dưới đây:
+---
+
+## 3. Đánh giá nhanh mô hình sửa chính tả Tiếng Việt
+
+Sau khi đã cấu hình xong, bạn có thể thử đánh giá nhanh chất lượng sửa chính tả Tiếng Việt bằng đoạn code mẫu dưới đây:
 
 ```python
 from protonx import ProtonX
 
-client = ProtonX(mode = "online") 
+client = ProtonX()
 
-# Hoặc chỉ cần client = ProtonX() mặc định mode là "online"
-```
-
-### 1.2. Sử dụng Offline qua HuggingFace
-
-Để sử dụng được các chức năng sửa lỗi chính tả offline, bạn cần khởi tạo client ProtonX bằng đoạn code mẫu dưới đây:
-
-```python
-from protonx import ProtonX
-
-client = ProtonX(mode = "offline") 
-```
-
-## 2. Sử dụng mô hình sửa chính tả Tiếng Việt
-
-Sau khi đã cấu hình và thiết lập xong client ProtonX, bạn có thể xem danh sách những mô hình đang được thư viện hỗ trợ thông qua đoạn code mẫu dưới đây:
-
-```python
-list_models = client.text.list_model()
-```
-
-Đoạn mã trên sẽ trả về danh sách các mô hình hiện đang được thư viện hỗ trợ
-
-### Ví dụ: Danh sách mô hình
-
-```python
-{
-    'models': 
-    {
-        'online':  [ 
-            'distilled-protonx-legal-tc'
-            ],
-        'offline': [
-            'protonx-models/distilled-protonx-legal-tc',
-            'protonx-models/protonx-legal-tc'
-            ]
-    }
-}
-```
-
-Bạn có thể lựa chọn mô hình mong muốn để đánh giá chất lượng sửa chính tả Tiếng Việt bằng đoạn code mẫu dưới đây:
-
-```python
-correct_text = client.text.correct(
-    input = "Toi di hoc", 
-    top_k = 3, 
-    model = 'protonx-models/distilled-protonx-legal-tc'
-    )
-
-#Lưu ý, cần lựa chọn mô hình theo đúng mode đã thiết lập client (online/offline)
+correct_text = client.text.correct(input = "Toi di hoc", top_k=3)
 ```
 
 Đoạn mã trên sẽ:
-1. Download trực tiếp mô hình từ HuggingFace về nếu bạn thiết lập mode offline
-1. Gửi yêu cầu chỉnh sửa câu **Toi di hoc** thành câu Tiếng Việt đúng.
+
+1. Khởi tạo client ProtonX.
+2. Gửi yêu cầu chỉnh sửa câu **Toi di hoc** thành câu Tiếng Việt đúng.
 3. Trả về kết quả sau khi chỉnh sửa.
 
 ### Ví dụ: Kết quả trả về
 
 ```python
 {
-    "model": "protonx-models/distilled-protonx-legal-tc",
+    "model": "protonx-text-correction-v1",
     "data": [
         {
             "input": "Toi di hoc",
@@ -134,7 +90,7 @@ correct_text = client.text.correct(
 ```
 ---
 
-## 3. Giới hạn và liên hệ hỗ trợ
+## 4. Giới hạn và liên hệ hỗ trợ
 
 Dịch vụ sửa chính tả Tiếng Việt ProtonX có giới hạn số lượng yêu cầu mỗi ngày đối với tài khoản miễn phí.
 Nếu bạn muốn **mở rộng giới hạn sử dụng**, xin vui lòng liên hệ:

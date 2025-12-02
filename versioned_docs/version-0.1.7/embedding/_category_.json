@@ -1,0 +1,10 @@
+{
+  "label": "Embeddings",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Embeddings",
+    "description": "Transform text into high-quality vector embeddings with ProtonX"
+  }
+}

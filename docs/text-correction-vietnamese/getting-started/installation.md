@@ -72,7 +72,7 @@ list_models = client.text.list_model()
 
 Đoạn mã trên sẽ trả về danh sách các mô hình hiện đang được thư viện hỗ trợ
 
-### Ví dụ: Danh sách mô hình
+### Liệt kê danh sách các mô hình
 
 ```python
 {
@@ -93,10 +93,10 @@ Bạn có thể lựa chọn mô hình mong muốn để đánh giá chất lư�
 
 ```python
 correct_text = client.text.correct(
-    input = "Toi di hoc", 
-    top_k = 3, 
-    model = 'protonx-models/distilled-protonx-legal-tc'
-    )
+    input="Toi di hoc",               # Văn bản đầu vào cần sửa lỗi
+    top_k=3,                           # Lấy ra 3 phương án sửa lỗi tốt nhất
+    model='protonx-models/distilled-protonx-legal-tc'  # Mô hình sửa lỗi (bản distill tối ưu tốc độ)
+)
 
 #Lưu ý, cần lựa chọn mô hình theo đúng mode đã thiết lập client (online/offline)
 ```
@@ -106,7 +106,7 @@ correct_text = client.text.correct(
 1. Gửi yêu cầu chỉnh sửa câu **Toi di hoc** thành câu Tiếng Việt đúng.
 3. Trả về kết quả sau khi chỉnh sửa.
 
-### Ví dụ: Kết quả trả về
+### Kết quả trả về
 
 ```python
 {
